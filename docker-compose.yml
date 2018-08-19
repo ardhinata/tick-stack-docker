@@ -10,8 +10,8 @@ services:
           - node.role == manager
       resources:
         limits:
-          cpus: '1'
-          memory: 256M
+          cpus: '2'
+          memory: 512M
     ports:
       - target: 8086
         published: 8086
@@ -59,7 +59,7 @@ services:
       resources:
         limits:
           cpus: '1'
-          memory: 128M
+          memory: 256M
     ports:
       - target: 3000
         published: 14001
@@ -80,7 +80,7 @@ services:
       resources:
         limits:
           cpus: '1'
-          memory: 128M
+          memory: 256M
     ports:
       - target: 9092
         published: 9092
@@ -106,7 +106,7 @@ services:
       resources:
         limits:
           cpus: '1'
-          memory: 128M
+          memory: 256M
     ports:
       - target: 8888
         published: 14002
