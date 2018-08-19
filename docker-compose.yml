@@ -120,40 +120,40 @@ services:
       - influxdb
     restart: always
 
-  telegraf:
-    image: telegraf:alpine
-    deploy:
-      replicas: 1
-      endpoint_mode: vip
-      resources:
-        limits:
-          cpus: '1'
-          memory: 128M
-    volumes:
-      - type: bind
-        source: ./config/telegraf.conf
-        target: /etc/telegraf/telegraf.conf
-        bind:
-          readonly: true
-      - type: bind
-        source: /proc
-        target: /host/proc
-        bind:
-          readonly: true
-      - type: bind
-        source: /var/run/docker.sock
-        target: /var/run/docker.sock
-        bind:
-          readonly: false
-      - type: bind
-        source: /var/run/utmp
-        target: /var/run/utmp
-        bind:
-          readonly: true
-    env_file: ./config/env/grafana.env
-    networks:
-      - influxdb
-    restart: always
+  # telegraf:
+  #   image: telegraf:alpine
+  #   deploy:
+  #     replicas: 1
+  #     endpoint_mode: vip
+  #     resources:
+  #       limits:
+  #         cpus: '1'
+  #         memory: 128M
+  #   volumes:
+  #     - type: bind
+  #       source: ./config/telegraf.conf
+  #       target: /etc/telegraf/telegraf.conf
+  #       bind:
+  #         readonly: true
+  #     - type: bind
+  #       source: /proc
+  #       target: /host/proc
+  #       bind:
+  #         readonly: true
+  #     - type: bind
+  #       source: /var/run/docker.sock
+  #       target: /var/run/docker.sock
+  #       bind:
+  #         readonly: false
+  #     - type: bind
+  #       source: /var/run/utmp
+  #       target: /var/run/utmp
+  #       bind:
+  #         readonly: true
+  #   env_file: ./config/env/grafana.env
+  #   networks:
+  #     - influxdb
+  #   restart: always
 volumes:
   influxdb:
     external: false
