@@ -11,7 +11,7 @@ services:
       resources:
         limits:
           cpus: '2'
-          memory: 512M
+          memory: 384M
     ports:
       - target: 8086
         published: 8086
