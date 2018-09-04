@@ -9,9 +9,12 @@ services:
         constraints:
           - node.role == manager
       resources:
+        reservations:
+          cpus: '1'
+          memory: 256M
         limits:
-          cpus: '2'
-          memory: 384M
+          cpus: '4'
+          memory: 1440M
     ports:
       - target: 8086
         published: 8086
