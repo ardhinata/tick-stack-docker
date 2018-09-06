@@ -13,8 +13,8 @@ services:
           cpus: '1'
           memory: 256M
         limits:
-          cpus: '4'
-          memory: 1440M
+          # cpus: '4'
+          memory: 2560M
     ports:
       - target: 8086
         published: 8086
@@ -61,8 +61,8 @@ services:
       endpoint_mode: vip
       resources:
         limits:
-          cpus: '1'
-          memory: 256M
+          cpus: '2'
+          memory: 384M
     ports:
       - target: 3000
         published: 14001
