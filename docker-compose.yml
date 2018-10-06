@@ -176,6 +176,12 @@ services:
     ports:
       - target: 53
         published: 53
+        protocol: tcp
+        mode: ingress
+      - target: 53
+        published: 53
+        protocol: udp
+        mode: ingress
     networks:
       - main
     restart: always
