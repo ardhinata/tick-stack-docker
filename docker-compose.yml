@@ -157,6 +157,29 @@ services:
   #   networks:
   #     - influxdb
   #   restart: always
+
+  dnscrypt:
+    image: ardhinata/dnscrypt"alpine-test
+    deploy:
+      replicas: 2
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: '1'
+          memory: 256M
+    volumes:
+      - type: bind
+        source: ./config/dnscrypt-proxy.toml
+        target: /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+        bind:
+          readonly: true
+    ports:
+      - target: 53
+        published: 53
+    networks:
+      - main
+    restart: always
+
 volumes:
   influxdb:
     external: false
