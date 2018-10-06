@@ -159,7 +159,7 @@ services:
   #   restart: always
 
   dnscrypt:
-    image: ardhinata/dnscrypt"alpine-test
+    image: ardhinata/dnscrypt:alpine-test
     deploy:
       replicas: 2
       endpoint_mode: vip
