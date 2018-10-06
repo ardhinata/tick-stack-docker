@@ -67,10 +67,10 @@ doh_servers = true
 ## Require servers defined by remote sources to satisfy specific properties
 
 # Server must support DNS security extensions (DNSSEC)
-require_dnssec = false
+require_dnssec = true
 
 # Server must not log user queries (declarative)
-require_nolog = true
+require_nolog = false
 
 # Server must not enforce its own blacklist (for parental control, ads blocking...)
 require_nofilter = true
@@ -95,7 +95,7 @@ force_tcp = false
 
 ## How long a DNS query will wait for a response, in milliseconds
 
-timeout = 2500
+timeout = 1000
 
 
 ## Keepalive for HTTP (HTTPS, HTTP/2) queries, in seconds
@@ -176,7 +176,7 @@ fallback_resolver = '9.9.9.9:53'
 ## Never let dnscrypt-proxy try to use the system DNS settings;
 ## unconditionally use the fallback resolver.
 
-ignore_system_dns = false
+ignore_system_dns = true
 
 
 ## Maximum time (in seconds) to wait for network connectivity before
@@ -261,17 +261,17 @@ cache = true
 
 ## Cache size
 
-cache_size = 10240
+cache_size = 512
 
 
 ## Minimum TTL for cached entries
 
-cache_min_ttl = 300
+cache_min_ttl = 600
 
 
 ## Maximum TTL for cached entries
 
-cache_max_ttl = 86400
+cache_max_ttl = 43200
 
 
 ## Minimum TTL for negatively cached entries
@@ -281,7 +281,7 @@ cache_neg_min_ttl = 60
 
 ## Maximum TTL for negatively cached entries
 
-cache_neg_max_ttl = 600
+cache_neg_max_ttl = 300
 
 
 
