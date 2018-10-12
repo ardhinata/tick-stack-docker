@@ -161,7 +161,7 @@ services:
   dnscrypt:
     image: ardhinata/dnscrypt:alpine-test
     deploy:
-      replicas: 12
+      replicas: 1
       endpoint_mode: vip
       resources:
         limits:

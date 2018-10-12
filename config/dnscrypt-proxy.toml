@@ -105,7 +105,7 @@ keepalive = 30
 
 ## Load-balancing strategy: 'p2' (default), 'ph', 'fastest' or 'random'
 
-lb_strategy = 'fastest'
+lb_strategy = 'p2'
 
 
 ## Log level (0-6, default: 2 - 0 is very verbose, 6 only contains fatal errors)
@@ -256,7 +256,7 @@ block_ipv6 = false
 
 ## Enable a DNS cache to reduce latency and outgoing traffic
 
-cache = false
+cache = true
 
 
 ## Cache size
@@ -487,10 +487,10 @@ cache_neg_max_ttl = 300
   refresh_delay = 8
   prefix = ''
 
-  [sources.'opennic']
-  urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/opennic.md', 'https://download.dnscrypt.info/resolvers-list/v2/opennic.md']
-  minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
-  cache_file = 'opennic.md'
+  #[sources.'opennic']
+  #urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/opennic.md', 'https://download.dnscrypt.info/resolvers-list/v2/opennic.md']
+  #minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+  #cache_file = 'opennic.md'
 
   ## Another example source, with resolvers censoring some websites not appropriate for children
   ## This is a subset of the `public-resolvers` list, so enabling both is useless
